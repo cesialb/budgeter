@@ -1,0 +1,51 @@
+<table class="table-bordered" style="width:100%">
+  <thead>
+    <tr>
+      <th class="table-category" scope="col">Date</th>
+      <th class="table-category" scope="col" style="width:30%">Name</th>
+      <th class="table-category" scope="col" style="width:20%">Category</th>
+      <th class="table-category">Amount</th>
+      <th style="width:7%">
+        <a href="/expenses/add">
+          <button type="submit">Add expense</button>
+        </a>
+      <th style="width:7%">
+        <a href="/expenses/delete_all_expenses">
+          <button type="submit">Delete all expenses</button>
+        </a>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses.each do |info|%>
+      <tr>
+        <th><%= info[:date]%></th>
+        <th><%= info[:name]%></th>
+        <th><%= info[:category]%></th>
+        <th><%= info[:amount]%></th>
+        <th>
+          <a href="/expenses/<%= info[:id] %>/edit">
+            <button type="submit">Edit</button>
+          </a>
+        </th>
+        <th>
+          <a href="/expenses/<%= info[:id] %>/delete">
+            <button type="submit">Delete</button>
+          </a>
+        </th>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <th class="table-total" scope="col">Total</th>
+      <th></th>
+      <th></th>
+      <th class="table-total">
+        <%= @total %>
+      </th>
+    </tr>
+  </tfoot>
+</table>

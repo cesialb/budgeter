@@ -1,0 +1,30 @@
+<h2>Editing "<%= @expense[:name] %>"</h2>
+
+<form action="/expenses/<%= params[:id] %>" method="post">
+  <dl>
+    <dt>
+      <label for="name">Enter the new name for <%= @expense[:name] %>:</label>
+    </dt>
+    <dd>
+    <input name="name" placeholder="Expense Name" type="text" value="<%= params[:name] || @expense[:name] %>">
+    </dd>
+
+    <dt>
+      <label for="amount">Enter the new amount:</label>
+    </dt>
+    <dd>
+    <input name="amount" placeholder="Amount" type="text" value="<%= params[:amount] || @expense[:amount] %>">
+    </dd>
+
+    <dt>
+      <label for="category">Enter the new category for <%= @expense[:category] %>:</label>
+    </dt>
+    <dd>
+    <input name="category" placeholder="Category" type="text" value="<%= params[:category] || @expense[:category] %>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/">Cancel</a>
+  </fieldset>
+</form>

@@ -1,0 +1,37 @@
+<h2>New Expense</h2>
+
+<form action="/expenses/add" method="post">
+  <dl>
+    <dt>
+      <label for="name">Enter the name for the expense:</label>
+    </dt>
+    <dd>
+    <input name="name" placeholder="Expense Name" type="text" value="">
+    </dd>
+
+    <dt>
+      <label for="amount">Enter the amount:</label>
+    </dt>
+    <dd>
+    <input name="amount" placeholder="Amount" type="text" value="">
+    </dd>
+
+    <dt>
+      <label for="category">Enter the category for the expense:</label>
+    </dt>
+    <dd>
+    <input name="category" placeholder="Category" type="text" value="">
+    </dd>
+
+    <dt>
+      <label for="date">Enter the date for the expense (YYYY-MM-DD):</label>
+    </dt>
+    <dd>
+    <input name="date" placeholder="Date" type="text" value="">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/">Cancel</a>
+  </fieldset>
+</form>
